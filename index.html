@@ -11,14 +11,32 @@
             let conversionType = document.getElementById('conversionType').value;
             let result;
             switch (conversionType) {
-                case 'Fahrenheit':
+                case 'CelsiustoFahrenheit':
                     result = (inputValue * 9/5) + 32;
                     break;
-                case 'Kelvin':
+                case 'CelsiustoKelvin':
                     result = inputValue + 273.15;
                     break;
-                case 'Celsius':
-                    result = (inputValue - 32) * 5/9;
+                case 'CelsiustoCelsius':
+                    result = inputValue;
+                    break;
+                case 'FahrenheittoCelsius':
+                    result = (inputValue - 32) * 5/9 ;
+                    break;
+                case 'FahrenheittoKelvin':
+                    result = (inputValue - 32) * 5/9 + 273.15;
+                    break;
+                case 'FahrenheittoFahrenheit':
+                    result = inputValue;
+                    break;
+                case 'KelvintoCelsius':
+                    result = inputValue - 273.15;
+                    break;
+                case 'KelvintoFahrenheit':
+                    result = (inputValue - 273.15) * 9/5 + 32;
+                    break;
+                case 'KelvintoKelvin':
+                    result = inputValue;
                     break;
                 default:
                     result = 'Invalid conversion type';
@@ -32,15 +50,22 @@
         <h1>Temperature Convertor</h1>
         <br>
         <div class="input">
-            <label for="inputValue">Degrees:</label>
+            <label for="inputValue">Value :</label>
             <input type ="number" id="inputValue" name="inputValue">
         </div><br>
         <div class = "dropdown">
-            <label for="conversionType">Convert To:</label>
+            <label for="conversionType">Conversion Type:</label>
             <select name = "conversionType" id ="conversionType" style="font-size: 20px;">
-                <option value="Fahrenheit" style="font-size: 20px;" >Fahrenheit</option>
-                <option value="Kelvin" style="font-size: 20px;">Kelvin</option>
-                <option value="Celsius" style="font-size: 20px;">Celsius</option>
+                <option disabled selected value> select a conversion type </option>
+                <option value="CelsiustoFahrenheit" style="font-size: 20px;">Celsius <span>&degC</span> to Fahrenheit <span>&degF</span></option>
+                <option value="CelsiustoKelvin" style="font-size: 20px;">Celsius <span>&degC</span> to Kelvin <span>K</span></option>
+                <option value="CelsiustoCelsius" style="font-size: 20px;">Celsius <span>&degC</span> to Celsius <span>&degC</span></option>
+                <option value="FahrenheittoCelsius" style="font-size: 20px;" >Fahrenheit <span>&degF</span> to Celsius <span>&degC</span></option>
+                <option value="FahrenheittoKelvin" style="font-size: 20px;" >Fahrenheit <span>&degC</span> to Kelvin <span>K</span></option>
+                <option value="FahrenheittoFahrenheit" style="font-size: 20px;">Fahrenheit <span>&degF</span> to Fahrenheit <span>&degF</span></option>
+                <option value="KelvintoCelsius" style="font-size: 20px;">Kelvin <span>K</span> to Celsius <span>&degC</span></option>
+                <option value="KelvintoFahrenheit" style="font-size: 20px;">Kelvin <span>K</span> to Fahrenheit <span>&degF</span></option>
+                <option value="KelvintoKelvin" style="font-size: 20px;">Kelvin <span>K</span> to Kelvin <span>K</span></option>
             </select>
         </div>
         <br>

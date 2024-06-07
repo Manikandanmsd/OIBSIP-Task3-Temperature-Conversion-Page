@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 body,html{
-    height:fit-content;
-    background-image: url(weather2.jpg);
+    width:100%;
+    height: 400px;
+    background-image: url(https://wallpaperaccess.com/full/1540030.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -22,6 +23,8 @@ body,html{
     transform: translateX(-50%),translateY(-50%);
     background-color:#67E6DC;
     border-radius: 3.5%;
+    padding: 20px;
+    width: 50%;
 }
 .input input[type=number]{
     width: 30%;
@@ -31,7 +34,7 @@ body,html{
     border-radius: 20px;
 }
 .dropdown select[name=conversionType]{
-    width: 30%;
+    width: 50%;
     padding: 15px 20px;
     margin: 10px 0;
     box-sizing: border-box;
@@ -46,15 +49,42 @@ body,html{
     background-color:#45CE30;
     border: none;
     color: black;
-    padding: 20px 40px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
     transition: 0.3s;
-    margin-inline: 250px;
 }
 
 .button button[type=button]:hover{
     background-color:#E74292;
     color: white;
+}
+
+/* Media queries */
+
+@media only screen and (max-width : 600px) {
+    body,html{
+        background-size: cover;
+        height: auto;
+    }
+   .container{
+        top: 30%;
+        width: 80%;
+        font-size: 1.2em;
+        padding: 10px;
+   }
+   .input input[type=number] {
+    width: 80%;
+    padding: 10px;
+    }
+    .dropdown select[name=conversionType] {
+        width: 80%;
+        padding: 10px;
+    }
+    .button button[type=button] {
+        width: 80%;
+        padding: 10px;
+        font-size: 14px;
+        margin-inline: 0;
+    }
 }
